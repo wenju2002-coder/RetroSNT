@@ -1,0 +1,100 @@
+{
+  "seed": 43,
+  "data": {
+    "raw_path": "./data/USPT-50K/50k-all.txt",
+    "bond_energy_path": "./data/USPT-50K/other_data/Bond_Energy.txt",
+    "labels_path": "./data/USPT-50K/other_data/Labels.txt",
+    "processed_dir": "processed/uspto50k",
+    "split_seed": 42,
+    "max_leaving_groups": 99,
+    "max_edit_steps": 12,
+    "split_strategy": "stratified_train_validation_fixed_test",
+    "train_validation_range": [
+      0,
+      31833
+    ],
+    "validation_size": 3537,
+    "test_range": [
+      31833,
+      35370
+    ],
+    "limit": 35370
+  },
+  "model": {
+    "hidden_dim": 192,
+    "token_dim": 48,
+    "mpnn_layers": 4,
+    "snt_steps": 4,
+    "heads": 6,
+    "dropout": 0.18,
+    "use_reaction_class": true,
+    "threshold": 1,
+    "plif_beta": 0.8,
+    "surrogate_temperature": 0.2,
+    "contrastive_temperature": 0.2,
+    "contrastive_center_only": true,
+    "maximum_atom_codes": null,
+    "maximum_bond_codes": null,
+    "moe_experts": [
+      "bond_cleavage",
+      "functional_group",
+      "ring_edit",
+      "stereochemistry",
+      "atom_property"
+    ]
+  },
+  "loss": {
+    "action_type_weight": 1,
+    "center_weight": 1,
+    "selector_weight": 0.8,
+    "attribute_weight": 0.5,
+    "leaving_group_weight": 0.7,
+    "endpoint_leaving_group_weight": 1.5,
+    "endpoint_class_balance": true,
+    "endpoint_min_class_weight": 0.5,
+    "endpoint_max_class_weight": 4,
+    "endpoint_label_smoothing": 0.05,
+    "endpoint_atom_auxiliary_weight": 0.25,
+    "center_bond_weight": 1.5,
+    "center_bond_margin": 0.5,
+    "center_bond_margin_weight": 0,
+    "center_bond_hard_negatives": 3,
+    "joint_ranking_weight": 0.75,
+    "joint_ranking_margin": 0.2,
+    "joint_ranking_hard_negatives": 20,
+    "joint_ranking_endpoint_candidates": 5,
+    "alignment_weight": 0.1,
+    "token_contrastive_weight": 0,
+    "moe_balance_weight": 0.01
+  },
+  "training": {
+    "epochs": 100,
+    "batch_size": 24,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0003,
+    "num_workers": 0,
+    "grad_clip": 5,
+    "device": "auto",
+    "selection_metric": "retro_mtgr_target_score",
+    "target_top1": 0.7,
+    "target_top3": 0.8,
+    "target_top5": 0.9,
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 4,
+    "minimum_learning_rate": 0.000001,
+    "early_stopping_patience": 12,
+    "run_dir": "runs"
+  },
+  "calibration": {
+    "epochs": 25,
+    "learning_rate": 0.05,
+    "bins": 15
+  },
+  "decoding": {
+    "beam_width": 20,
+    "top_actions_per_state": 12,
+    "max_steps": 6,
+    "length_penalty": 0.05,
+    "uncertainty_penalty": 0.05
+  }
+}

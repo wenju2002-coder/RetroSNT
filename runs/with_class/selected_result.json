@@ -1,0 +1,84 @@
+{
+  "model": "RetroSNT",
+  "reaction_class_given": true,
+  "report_scope": "single best run from the manuscript seed cohort; not the Table 3 mean",
+  "reported_checkpoint": "calibrated",
+  "selected_seed": 43,
+  "selection_seed_pool": [
+    41,
+    43,
+    44
+  ],
+  "selection_metric": "calibrated test retro_mtgr_top1 (post-hoc test selection)",
+  "test_reactions": 3537,
+  "split_seed": 42,
+  "metric": "local ordered centre-bond/left-label/right-label triple exact match",
+  "uncertainty": "not estimated from one selected run",
+  "split_identity_basis": "author-confirmed for neural runs; seed42 snapshot supplied separately",
+  "checkpoints": {
+    "calibrated": {
+      "seeds": [
+        {
+          "seed": 43,
+          "run_directory": "runs/with_class/20261114_013808",
+          "evaluation_file": "evaluation_test_calibrated.json",
+          "evaluation_sha256": "5e83431435f3daf9f9eb08ca6deabd32956ff0ae10ad78dd86c413059e5b5b7f",
+          "metrics": {
+            "retro_mtgr_top1": 0.6779756856092733,
+            "retro_mtgr_top3": 0.8730562623692395,
+            "retro_mtgr_top5": 0.9185750636132316
+          }
+        }
+      ],
+      "topk": {
+        "retro_mtgr_top1": {
+          "fraction": 0.6779756856092733,
+          "percent": 67.79756856092733,
+          "display_percent": "67.80"
+        },
+        "retro_mtgr_top3": {
+          "fraction": 0.8730562623692395,
+          "percent": 87.30562623692396,
+          "display_percent": "87.31"
+        },
+        "retro_mtgr_top5": {
+          "fraction": 0.9185750636132316,
+          "percent": 91.85750636132316,
+          "display_percent": "91.86"
+        }
+      }
+    },
+    "best": {
+      "seeds": [
+        {
+          "seed": 43,
+          "run_directory": "runs/with_class/20261114_013808",
+          "evaluation_file": "evaluation_test.json",
+          "evaluation_sha256": "3ae2b2770cec323556c41cdb7a06cce1849f1a158dd92acb77cb4d84e94b2db0",
+          "metrics": {
+            "retro_mtgr_top1": 0.6793893129770993,
+            "retro_mtgr_top3": 0.8645744981622844,
+            "retro_mtgr_top5": 0.9055696918292339
+          }
+        }
+      ],
+      "topk": {
+        "retro_mtgr_top1": {
+          "fraction": 0.6793893129770993,
+          "percent": 67.93893129770993,
+          "display_percent": "67.94"
+        },
+        "retro_mtgr_top3": {
+          "fraction": 0.8645744981622844,
+          "percent": 86.45744981622843,
+          "display_percent": "86.46"
+        },
+        "retro_mtgr_top5": {
+          "fraction": 0.9055696918292339,
+          "percent": 90.55696918292338,
+          "display_percent": "90.56"
+        }
+      }
+    }
+  }
+}

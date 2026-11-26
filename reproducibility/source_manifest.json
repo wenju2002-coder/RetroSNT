@@ -1,0 +1,123 @@
+{
+  "package": "RetroSNT pre-acceptance partial public preview",
+  "base_project": "RetroSNT-v3.2.1_woa",
+  "data_provenance": {
+    "source_project": "Retro-MTGR",
+    "source_repository": "https://github.com/zpczaizheli/Retro-MTGR",
+    "attribution_basis": "author-confirmed data source; upstream README documents data/USPT-50K/50k-all.txt",
+    "input_files": [
+      "data/USPT-50K/50k-all.txt",
+      "data/USPT-50K/other_data/Bond_Energy.txt",
+      "data/USPT-50K/other_data/Labels.txt"
+    ],
+    "input_identity": "Input SHA-256 in seed42/seed42_verification.json; frozen artifact hashes in frozen_data",
+    "split_policy": "RetroSNT fixed test positions plus seed42 stratified train/validation split",
+    "identical_upstream_split_claimed": false
+  },
+  "paper_runs": [
+    {
+      "group": "with_class",
+      "seed": 43,
+      "run": "20261114_013808",
+      "files": {
+        "config.json": "e5ce4c337c9bcc35e508d7e8aa89fe9dd2eb9a5ca5cf8cb0c4c1635154e4ae12",
+        "evaluation_test.json": "3ae2b2770cec323556c41cdb7a06cce1849f1a158dd92acb77cb4d84e94b2db0",
+        "evaluation_test_calibrated.json": "5e83431435f3daf9f9eb08ca6deabd32956ff0ae10ad78dd86c413059e5b5b7f"
+      },
+      "checkpoints_included": false,
+      "checkpoint_files": {
+        "best.pt": "b3d868386d049c6d0d1bc1e94ebaaef94a9138ad0cd0fd5b7d87d77de4958d0e",
+        "calibrated.pt": "1da030fb8ab4005f17d7843d2ea3ff762c0238bf98ac8d423827b46e7a67017d"
+      }
+    },
+    {
+      "group": "without_class",
+      "seed": 44,
+      "run": "20261113_050504",
+      "files": {
+        "config.json": "280c84a798defba61b340453db63f098e60b03767ad08f7c4cf27c7a16a7f7a4",
+        "evaluation_test.json": "0b8d0bfb720c36c36fdfbc94710a8b5430fade4f5fac11d3fa601203ff812110",
+        "evaluation_test_calibrated.json": "8c6ee9b9bd10b01520f8e083b99ecf9ef0ccc280a3e226d7a01ff6f3401a8053"
+      },
+      "checkpoints_included": false,
+      "checkpoint_files": {
+        "best.pt": "f11b1b77fd359a9606d3e445822a2aaf50a346df97d24eef53c7408e97dde137",
+        "calibrated.pt": "34d2eeb2d86ba45f3cd9334598e578f53ceecf7f397c286ffd00541e777a34da"
+      }
+    }
+  ],
+  "frozen_data": {
+    "splits.json": "f6b04984695989857000c04945d74e9a31daf6b11394f1c6282bab4fb54288ef",
+    "manifest.json": "b608ff03069c4377439cb68b18baac7e5c8c0abf6b97cb6baa2d850c28f0dffe",
+    "lg_vocab.json": "bb616efece99ef04d626e09ad1bff15152745241b14993249f3186ca69d68daf",
+    "endpoint_lg_vocab.json": "1061c8c8dc14a999d33e37dda698eca62363821722c1b49747988c01c689e633",
+    "seed42_verification.json": "83be0b244267d342c6da8efe591bc97152a8ea7850a241fb098249bf77db2e6f"
+  },
+  "selection": {
+    "scope": "the three training seeds 41,43,44 used for the manuscript table",
+    "criterion": "maximum calibrated test retro_mtgr_top1 within each class group",
+    "candidates": [
+      {
+        "group": "with_class",
+        "seed": 41,
+        "run": "20261114_013748",
+        "calibrated_test_top1": 0.6754311563471869,
+        "source_evaluation_sha256": "5bd6eddf11afdcd577dcfca28d675dfbc98acf55fba29106e84c9b186063be07"
+      },
+      {
+        "group": "with_class",
+        "seed": 43,
+        "run": "20261114_013808",
+        "calibrated_test_top1": 0.6779756856092733,
+        "source_evaluation_sha256": "5e83431435f3daf9f9eb08ca6deabd32956ff0ae10ad78dd86c413059e5b5b7f"
+      },
+      {
+        "group": "with_class",
+        "seed": 44,
+        "run": "20261114_013854",
+        "calibrated_test_top1": 0.668928470455188,
+        "source_evaluation_sha256": "40175d89bccb6538341c8e427d9773b997eae18ca4328aaf3232ffbb6b1256fa"
+      },
+      {
+        "group": "without_class",
+        "seed": 41,
+        "run": "20261113_050416",
+        "calibrated_test_top1": 0.5996607294317218,
+        "source_evaluation_sha256": "bff29d502257687040325b4f05ff498ce582346f895bd35bb866068f32a8f005"
+      },
+      {
+        "group": "without_class",
+        "seed": 43,
+        "run": "20261113_050614",
+        "calibrated_test_top1": 0.5900480633305061,
+        "source_evaluation_sha256": "8e3fa2c3e61f5daf523a455c3880608ee47c0c5a9a01efc4d9d0afcf390bacdc"
+      },
+      {
+        "group": "without_class",
+        "seed": 44,
+        "run": "20261113_050504",
+        "calibrated_test_top1": 0.6055979643765903,
+        "source_evaluation_sha256": "8c6ee9b9bd10b01520f8e083b99ecf9ef0ccc280a3e226d7a01ff6f3401a8053"
+      }
+    ],
+    "reporting": "single best run, NOT mean ± SD",
+    "test_selected": true
+  },
+  "release_scope": {
+    "status": "partial_pre_acceptance_preview",
+    "model_implementation_included": false,
+    "training_implementation_included": false,
+    "inference_implementation_included": false,
+    "model_weights_included": false,
+    "raw_data_included": false,
+    "full_reproduction_supported": false,
+    "available_now": [
+      "configs",
+      "frozen split and vocabulary metadata",
+      "selected archived results",
+      "standalone audit scripts"
+    ],
+    "full_release_plan": "Full implementation and reproduction instructions are planned upon manuscript acceptance.",
+    "selected_result_scope": "Single test-selected runs; not manuscript three-seed mean and SD."
+  }
+}

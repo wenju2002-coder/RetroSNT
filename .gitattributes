@@ -1,0 +1,2 @@
+# Preserve exact artifact bytes and their SHA-256 values on all platforms.
+* -text

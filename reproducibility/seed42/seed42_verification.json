@@ -1,0 +1,22 @@
+{
+  "split_seed": 42,
+  "split_sizes": {
+    "train": 28296,
+    "validation": 3537,
+    "test": 3537
+  },
+  "source_data_sha256": {
+    "raw": "82fb0969d7c11db3600359f73e01a1e1cf50195bcd5234ee4489c0831ee8b704",
+    "bond_energy": "9a67ba90974b607e9013d615af2cb82c994e28f60759696c3a2f38da1e0fd784",
+    "endpoint_labels_source": "e30e5b600f54fa63674dddeaf5267a3067840529b4a737b69ba70586d63c6a00"
+  },
+  "snapshot_sha256": {
+    "splits.json": "f6b04984695989857000c04945d74e9a31daf6b11394f1c6282bab4fb54288ef",
+    "manifest.json": "b608ff03069c4377439cb68b18baac7e5c8c0abf6b97cb6baa2d850c28f0dffe",
+    "lg_vocab.json": "bb616efece99ef04d626e09ad1bff15152745241b14993249f3186ca69d68daf",
+    "endpoint_lg_vocab.json": "1061c8c8dc14a999d33e37dda698eca62363821722c1b49747988c01c689e633"
+  },
+  "metadata_changes": "Only manifest.raw_path was made relative; split indices and vocabularies are unchanged.",
+  "original_manifest_sha256": "5b4099644f18fc29160357e03bad2844def4cd959ee89facfa000a69a06f1a0d",
+  "neural_split_identity_basis": "author-confirmed; supplied seed42 snapshot verified separately"
+}
